@@ -1,0 +1,660 @@
+/*
+    Vars
+    ====
+*/
+/*
+    colors
+    ------
+*/
+/*
+    Fonts
+    -----
+*/
+/*
+    Z-indexes
+    ---------
+*/
+/*
+    Widths
+    ------
+*/
+/*
+    Spacing
+    -----------
+*/
+/*
+    functions
+    =========
+*/
+/*
+    Functions
+    =========
+*/
+/*
+    PX to EM
+    --------
+
+    Convert px to em
+
+    $base-font-size is used as a default so when you use the em() function you don't have to provide
+    a second parameter if your working with a element with the default font-size
+*/
+/*
+    EM to PX
+    --------
+
+    Convert em to px
+*/
+/*
+    mixins
+    ======
+*/
+/*
+    a small mixin for easy use of rem with px as fallback
+    usage: @include x-rem(font-size, 14px)
+    usage: @include x-rem(marign, 0 12px 2 1.2)
+    usage: @include x-rem(padding, 1.5 24px)
+
+    thanks to Eric Meyer for https://github.com/ericam/susy
+    and Hans Christian Reinl for http://drublic.de/blog/rem-fallback-sass-less/
+
+    set $base-font-size outside of the mixin in your variables file
+*/
+/*
+    generic
+    =======
+*/
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio, canvas, progress, video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+[hidden], template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active, a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b, strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button, input, optgroup, select, textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button, select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"], input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td, th {
+  padding: 0; }
+
+/*
+    base styles
+    ===========
+*/
+/*
+    objects
+    =======
+*/
+/*
+    Grids
+    =====
+
+    Taken from inuit.css framework
+
+    Fluid and nestable grid system, e.g.:
+
+    <div class="grid">
+
+        <div class="grid__cell one-third">
+            <p>One third grid</p>
+        </div><!--
+
+     --><div class="grid__cell two-thirds">
+            <p>Two thirds grid</p>
+        </div><!--
+
+     --><div class="grid__cell one-half">
+            <p>One half grid</p>
+        </div><!--
+
+     --><div class="grid__cell one-quarter">
+            <p>One quarter grid</p>
+        </div><!--
+
+     --><div class="grid__cell one-quarter">
+            <p>One quarter grid</p>
+        </div>
+
+    </div>
+
+*/
+/*
+    All content must be contained within child Grid-cell elements.
+
+    1.  Account for browser defaults of elements that might be the root node of
+        the component.
+*/
+.grid {
+  display: block;
+  /* 1 */
+  padding: 0;
+  /* 1 */
+  margin: 0;
+  /* 1 */
+  margin-left: -2.22222em; }
+
+/*
+    Very infrequently occuring grid wrappers as children of grid wrappers.
+*/
+.grid > .grid {
+  margin-left: 0; }
+
+/*
+    No explicit width by default. Rely on combining `Grid-cell` with a dimension
+    utility or a component class that extends 'grid'.
+
+    1. Fundamentals of the non-float grid layout.
+    2. Controls vertical positioning of units.
+    3. Make cells full-width by default.
+*/
+.grid__cell {
+  display: inline-block;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+  width: 100%;
+  /* 3 */
+  padding-left: 2.22222em; }
+
+/**
+ * Gutterless grids have all the properties of regular grids, minus any spacing.
+ */
+.grid--full {
+  margin-left: 0; }
+  .grid--full > .grid__cell {
+    padding-left: 0; }
+
+/*
+    Media
+    =====
+
+    Media object was created by:- Nicole Sullivan.
+
+    This version of it taken from inuit.css framework
+
+    Place any image- and text-like content side-by-side, as per:
+    stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+    E.g.:
+
+    <div class=media>
+        <img src=http://placekitten.com/200/300 alt="" class=media__img>
+        <p class=media__body>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    Demo: jsfiddle.net/inuitcss/cf4Qs
+
+*/
+.media {
+  display: block; }
+
+.media__img {
+  float: left;
+  margin-right: 40px; }
+
+/*
+    Reversed image location (right instead of left).
+*/
+.media__img--rev {
+  float: right;
+  margin-left: 40px; }
+
+.media__img img, .media__img--rev img {
+  display: block; }
+
+.media__body {
+  overflow: hidden; }
+
+.media__body, .media__body > :last-child {
+  margin-bottom: 0; }
+
+/*
+    Nav
+    ===
+
+    Taken from inuit.css framework
+
+    Nav abstraction as per: csswizardry.com/2011/09/the-nav-abstraction
+    When used on an `ol` or `ul`, this class throws the list into horizontal mode
+    e.g.:
+
+    <ul class=nav>
+        <li><a href=#>Home</a></li>
+        <li><a href=#>About</a></li>
+        <li><a href=#>Portfolio</a></li>
+        <li><a href=#>Contact</a></li>
+    </ul>
+
+    Demo: jsfiddle.net/inuitcss/Vnph4
+
+*/
+/*
+    1:  Set line-height so positing does not depend on the global line-height set on the html element.
+        Overwrite this value on a particular nav if you need to.
+
+        This way if the global line-height changes it does not effect the navigations position.
+*/
+.nav {
+  margin-left: 0;
+  line-height: 1em;
+  /* 1 */ }
+  .nav > li, .nav > li > a {
+    display: inline-block; }
+
+/*
+    .nav--stacked
+    -------------
+    extends .nav and throws the list into vertical mode, e.g.:
+
+    <ul class="nav  nav--stacked">
+        <li><a href=#>Home</a></li>
+        <li><a href=#>About</a></li>
+        <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+    </ul>
+
+*/
+.nav--stacked > li {
+  display: list-item; }
+  .nav--stacked > li > a {
+    display: block; }
+
+/*
+    Force a nav to occupy 100% of the available width of its parent. Extends
+    .nav, e.g.:
+
+    <ul class="nav  nav--fit">
+        <li><a href=#>Home</a></li>
+        <li><a href=#>About</a></li>
+        <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+    </ul>
+
+    Thanks to @pimpl for this idea!
+*/
+.nav--fit {
+  display: table;
+  width: 100%; }
+  .nav--fit > li {
+    display: table-cell; }
+    .nav--fit > li > a {
+      display: block; }
+
+/*
+    Make a list of keywords. Extends `.nav`, e.g.:
+
+    <ul class="nav  nav--keywords>
+
+*/
+.nav--keywords > li:after {
+  content: ", "; }
+.nav--keywords > li:last-child:after {
+  display: none; }
+
+/*
+    This code was taken from the SUIT css framework and the selectors were just renamed.
+
+    intrinsic ratio trick, aka 'The Padding-Bottom Hack' http://mobile.smashingmagazine.com/2013/09/16/responsive-images-performance-problem-case-study
+
+    For use with media embeds – such as videos, slideshows, or even images –
+    that need to retain a specific aspect ratio but adapt to the width of their
+    containing element.
+
+    Example HTML:
+
+    <div class="aspect-ratio">
+        <iframe class="aspect-ratio-item" src="…"></iframe>
+    </div>
+
+    <div class="aspect-ratio">
+        [iframe|object|embed]
+    </div>
+
+    Based on: http://alistapart.com/article/creating-intrinsic-ratios-for-video
+ */
+.aspect-ratio {
+  display: block;
+  overflow: hidden;
+  position: relative; }
+
+/**
+ * A pseudo-element shunt is used to provide support for `max-height`. The
+ * `max-height` property has no affect when using a percentage-padding to set
+ * the aspect ratio.
+ */
+.aspect-ratio:before {
+  content: "";
+  display: block;
+  width: 100%; }
+
+/**
+ * Descendant: media element
+ *
+ * Utility of the component is improved by provide an explicit descendant
+ * class. However, it will work automatically for iframes, embeds, and objects
+ * to account for times when you cannot modify the attributes for 3rd party
+ * widget code.
+ */
+.aspect-ratio-item, .aspect-ratio iframe, .aspect-ratio embed, .aspect-ratio object {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+/*
+    ui
+    ==
+*/

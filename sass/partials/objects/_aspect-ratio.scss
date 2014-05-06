@@ -1,0 +1,60 @@
+/*
+    This code was taken from the SUIT css framework and the selectors were just renamed.
+
+    intrinsic ratio trick, aka 'The Padding-Bottom Hack' http://mobile.smashingmagazine.com/2013/09/16/responsive-images-performance-problem-case-study
+
+    For use with media embeds – such as videos, slideshows, or even images –
+    that need to retain a specific aspect ratio but adapt to the width of their
+    containing element.
+
+    Example HTML:
+
+    <div class="aspect-ratio">
+        <iframe class="aspect-ratio-item" src="…"></iframe>
+    </div>
+
+    <div class="aspect-ratio">
+        [iframe|object|embed]
+    </div>
+
+    Based on: http://alistapart.com/article/creating-intrinsic-ratios-for-video
+ */
+
+.aspect-ratio {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+/**
+ * A pseudo-element shunt is used to provide support for `max-height`. The
+ * `max-height` property has no affect when using a percentage-padding to set
+ * the aspect ratio.
+ */
+
+.aspect-ratio:before {
+    content: "";
+    display: block;
+    width: 100%;
+}
+
+/**
+ * Descendant: media element
+ *
+ * Utility of the component is improved by provide an explicit descendant
+ * class. However, it will work automatically for iframes, embeds, and objects
+ * to account for times when you cannot modify the attributes for 3rd party
+ * widget code.
+ */
+
+.aspect-ratio-item,
+.aspect-ratio iframe,
+.aspect-ratio embed,
+.aspect-ratio object {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
